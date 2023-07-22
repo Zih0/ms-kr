@@ -1,6 +1,6 @@
 {
   "name": "ms-kr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Korean millisecond conversion utility",
   "repository": "zih0/ms-kr",
   "main": "./dist/index.cjs",
