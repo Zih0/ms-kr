@@ -1,11 +1,11 @@
 // Helpers.
 const 초 = 1000;
-const 분 = 초 * 60;
-const 시간 = 분 * 60;
-const 일 = 시간 * 24;
-const 주 = 일 * 7;
+const 분 = 60 * 초;
+const 시간 = 60 * 분;
+const 일 = 24 * 시간;
+const 주 = 7 * 일;
 const 개월 = 30 * 일;
-const 년 = 일 * 365.25;
+const 년 = 365.25 * 일;
 
 type Unit = '주년' | '년' | '개월' | '주일' | '주' | '일' | '시간' | '분' | '초' | 'ms';
 
@@ -28,6 +28,8 @@ function msFn(value: StringValue | number): number | string {
     throw new Error(message);
   }
 }
+
+export const ms = msFn;
 
 function parse(value: string): number {
   const MAXIMUM_STRING_LENGTH = 100;
@@ -75,8 +77,6 @@ function calculate(numValue: number, type: Unit) {
       return numValue;
   }
 }
-
-export const ms = msFn;
 
 function format(ms: number): StringValue {
   const msAbs = Math.abs(ms);
